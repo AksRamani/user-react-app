@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+.navMenu {
+  background-color: #e0e0e0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+  width: 100%;
+}
+.navMenu h1 {
+  color: black;
+}
+.navMenu .links {
+  margin-left: auto;
+}
+.navMenu a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+  color: rgb(255, 123, 0);
+  font-size: 20px;
+}
+.navMenu a:hover {
+  cursor: pointer;
+  color: crimson;
+}
+
+.home h1
+{
+  margin-top: 50px;
+  color: #008b8b  ;
+}
+.home p 
+{
+  font-size: 20px;
+  color: #000;
+  margin: 15px 50px 10px 50px;
+  font-weight: 500;
+  text-align: center;
+}
+.members
+{
+  color: #434343;
+  font-size: 18px;
+  background-color: #fafafa;
+  padding: 15px 0 15px 15px;
+  border-left: 5px solid transparent;
+
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: KoHo,sans-serif;
+}
+
+.btn{
+  color: #000;
+  font-size: 18px;
+  background-color: #e1e1e1;
+  padding: 15px 0 15px 15px;
+  position: relative;
+  transition: 0.5s all;
+  cursor: pointer;
+}
+.btn:hover:after,
+.btn:hover:before{
+  transition: 0.5s all;
+  width: 100%;
+}
+.btn:before{
+  bottom: auto;
+  top: 0;
+}
+.btn:after,
+.btn:before{
+  position: absolute;
+  content: '';
+  width: 0;
+  background-color: #dc143c;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+div#root .test .members{
+  transition: 0.5s all;
+}
+div#root .test .members:hover{
+  padding-left: 10px;
+}
+.username
+{
+  font-size: 45px;
+  color: #6495ed;
+}
+.email
+{
+  font-size: 25px;
+  margin-top: 15px;
+}
+
+.backbtn
+{ 
+  margin: 20px;
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgb(27 31 35 / 10%) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.footer
+{
+  display: block;
+  color: #616161;
+  font-size: 27px;
+  text-transform: capitalize;
+  padding: 20px 0;
+  margin-top: 10%
+}
