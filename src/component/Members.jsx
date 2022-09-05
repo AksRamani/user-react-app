@@ -3,31 +3,33 @@ import { useParams , useNavigate} from "react-router-dom";
 
 
 const Members = () => {
+
+
   const navigat = useNavigate();
-
-  const id  = useParams();
-
-  let values = Object.values(id);
-  console.log(values)
-
-
-
+  const {id}  = useParams();
+  const [isPending, setIsPending] = useState(true);
     
   const [post, SetPost] = useState("");
   useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/users/${values}`)
-    .then((res) => {return res.json();
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+    .then((res) => {
+      if (!res.ok) {
+        throw Error("Could not fetch")
+        
+      }
+      return res.json();
     })
     .then((data)=>{
-      console.log(data)
       SetPost(data)
-    });
-    },[values]);
+      setIsPending(false);
+    }).catch(()=>{navigat("*")})
+    
+    },[]);
   return (
     
     <>
     <center>
-    
+    { isPending && <div>Loading...</div> }
     <h1>user id:-{post.id}</h1>
 
       <h2 className="username">Name :- {post.name}</h2>

@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './component/Navbar';
 import Home from './component/Home'
+import Error from './Error';
 import {
   BrowserRouter,
   Routes, // instead of "Switch"
@@ -8,7 +9,6 @@ import {
 } from "react-router-dom";  
 import Members from './component/Members';
 import Memberlist from './component/Memberlist';
-import Error from './component/Error';
 import Copyright from './component/Copyright';
 
 function App() {
@@ -24,7 +24,6 @@ function App() {
         <Route exact  path='*' element={<Error/>} />
       </Routes>
       <Copyright />
-    
     </BrowserRouter>
     </>
   );
