@@ -24,6 +24,7 @@ export default function Memberlist() {
       })
       .catch(() => {
         navigat("*");
+        setIsPending(false);
       });
   }, []);
 

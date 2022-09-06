@@ -17,14 +17,13 @@ const Members = () => {
     .then((res) => {
       if (!res.ok) {
         throw Error("Could not fetch")
-        
       }
       return res.json();
     })
     .then((data)=>{
       SetPost(data)
       setIsPending(false);
-    }).catch(()=>{navigat("*")})
+    }).catch(()=>{navigat("*");setIsPending(false);})
 
     
     },[]);
