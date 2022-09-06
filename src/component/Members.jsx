@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useParams , useNavigate} from "react-router-dom";
+
 
 
 const Members = () => {
@@ -23,19 +25,22 @@ const Members = () => {
       SetPost(data)
       setIsPending(false);
     }).catch(()=>{navigat("*")})
+
     
     },[]);
   return (
     
     <>
     <center>
-    { isPending && <div>Loading...</div> }
-    <h1>user id:-{post.id}</h1>
+    { isPending && <div class="loader"></div> }
+    {post.id && <h1>user id:-{post.id}</h1>}
 
-      <h2 className="username">Name :- {post.name}</h2>
-      <h2 className="email"> Email :-{post.email}</h2>
-      <h4 className="email" >Username:- {post.username}</h4>
-      <button className="backbtn" onClick={()=>{navigat("/Memberlist")}}> Go to Memberlist</button>
+    {post.name && <h2 className="username">Name :- {post.name}</h2> }
+    {post.email &&   <h2 className="email"> Email :-{post.email}</h2>} 
+    {post.username &&  <h4 className="email" >Username:- {post.username}</h4>} 
+      <Link to={"/Memberlist"}>
+        <h3  className="backbtn">Go to Memberlist</h3>
+      </Link>
 
     </center>
      

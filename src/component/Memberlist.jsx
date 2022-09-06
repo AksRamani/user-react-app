@@ -10,6 +10,7 @@ export default function Memberlist() {
   const [isPending, setIsPending] = useState(true);
 
   useEffect(() => {
+
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => {
         if (!res.ok) {
@@ -28,10 +29,12 @@ export default function Memberlist() {
 
   return (
     <>
-     { isPending && <div>Loading...</div> }
+     { isPending && <div class="ring">Loading
+  <span></span>
+</div> }
       {user !== null &&
         user.map((user) => (
-          <div className="column" key={user.id} id={user.id}>
+          <div  key={user.id} id={user.id}>
             <div className="inner" style={{ margin: "10px" }}>
               <div className="flex">
                 <Link to={`/${user.id}`} id={user.id}>
