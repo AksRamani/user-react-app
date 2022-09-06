@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Spinner from 'react-bootstrap/Spinner';
+import Spinner from "react-bootstrap/Spinner";
 // import Members from './component/Members';
 
 export default function Memberlist() {
@@ -10,8 +10,7 @@ export default function Memberlist() {
   const [isPending, setIsPending] = useState(true);
 
   useEffect(() => {
-
-    document.title ="Memberlist"
+    document.title = "Memberlist";
 
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => {
@@ -22,7 +21,7 @@ export default function Memberlist() {
       })
       .then((data) => {
         setUser(data);
-        setIsPending(false);  
+        setIsPending(false);
       })
       .catch(() => {
         navigat("*");
@@ -32,12 +31,18 @@ export default function Memberlist() {
 
   return (
     <>
-     { isPending && <div class="ring">Loading
-  <span></span>
-</div> }
+      {isPending && (
+        <div style={{ height: "0%" }}>
+          {" "}
+          <div className="ring">
+            Loading
+            <span></span>
+          </div>
+        </div>
+      )}
       {user !== null &&
         user.map((user) => (
-          <div  key={user.id} id={user.id}>
+          <div key={user.id} id={user.id}>
             <div className="inner" style={{ margin: "10px" }}>
               <div className="flex">
                 <Link to={`/${user.id}`} id={user.id}>
@@ -45,7 +50,7 @@ export default function Memberlist() {
                 </Link>
               </div>
             </div>
-          <Spinner animation="grow" />
+            <Spinner animation="grow" />
           </div>
         ))}
       ;
