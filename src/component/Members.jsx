@@ -13,6 +13,7 @@ const Members = () => {
     
   const [post, SetPost] = useState("");
   useEffect(() => {
+    document.title ="Member"
     fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
     .then((res) => {
       if (!res.ok) {

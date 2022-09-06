@@ -11,6 +11,8 @@ export default function Memberlist() {
 
   useEffect(() => {
 
+    document.title ="Memberlist"
+
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => {
         if (!res.ok) {
