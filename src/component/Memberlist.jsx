@@ -45,7 +45,7 @@ export default function Memberlist() {
           <div key={user.id} id={user.id}>
             <div className="inner" style={{ margin: "10px" }}>
               <div className="flex">
-                <Link to={`/${user.id}`} id={user.id}>
+                <Link to={`Memberlist/${user.id}`} id={user.id}>
                   <h2 className="btn">{user.name} </h2>
                 </Link>
               </div>
