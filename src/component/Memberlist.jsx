@@ -1,8 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Spinner from "react-bootstrap/Spinner";
-// import Members from './component/Members';
 
 export default function Memberlist() {
   const navigat = useNavigate();
@@ -45,12 +43,11 @@ export default function Memberlist() {
           <div key={user.id} id={user.id}>
             <div className="inner" style={{ margin: "10px" }}>
               <div className="flex">
-                <Link to={`/${user.id}`} id={user.id}>
+                <Link to={`/Member/${user.id}`} id={user.id}>
                   <h2 className="btn">{user.name} </h2>
                 </Link>
               </div>
             </div>
-            <Spinner animation="grow" />
           </div>
         ))}
       ;

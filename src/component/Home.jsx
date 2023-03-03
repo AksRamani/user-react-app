@@ -1,5 +1,4 @@
 import React from "react";
-import Spinner from "react-bootstrap/esm/Spinner";
 
 export default function Home() {
   document.title = "Home ";
